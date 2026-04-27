@@ -121,12 +121,6 @@ body {
     transition: 0.3s;
 }
 
-/* Dark mode */
-body.dark {
-    background-color: #999393;
-    color: white;
-}
-
 /* Move ball when active */
 body.dark .toggle-ball {
     transform: translateX(-25px);
@@ -203,7 +197,7 @@ body.dark .toggle-ball {
     font-size: .8em ;
     padding: 0 6px;
     color: #ae7cff;
-    background: #999393;
+    background: #121212;
 
 }
 .forget-pass{
