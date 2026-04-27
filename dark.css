@@ -1,4 +1,4 @@
-* {
+ * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -203,7 +203,7 @@ body.dark .toggle-ball {
     font-size: .8em ;
     padding: 0 6px;
     color: #ae7cff;
-    background: black;
+    background: #999393;
 
 }
 .forget-pass{
