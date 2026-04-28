@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link id="theme-style" rel="stylesheet" href="full.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <header class="header">
+        <a href="index.html">
+            <h1 class="logo">Screenly</h1>
+        </a>
+        <div class="authentication">
+            <a href="login.html" id="login" title="Already have an account" class="auth-link">Login</a>
+            <a href="Signup.html" id="signup" title="Create a new account" class="auth-link">Sign up</a>
+        </div>
+        <div class="toggle" onclick="toggleTheme()">
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <div class="toggle-ball"></div>
+        </div>
+    </header>
+    <!-- <hr class="line"> -->
+    <div class="sidebar">
+        <a href="index.html" title="Main page"><i class="left-menue-icon fa-solid fa-house"></i></a>
+        <a href="search.html" title="Search"><i class="left-menue-icon fa-solid fa-magnifying-glass"></i></a>
+        <a href="Movies.html" title="Movies"><i class="left-menue-icon fa-solid fa-film"></i></a>
+        <a href="Tv-Shows.html" title="TV-Shows"><i class="left-menue-icon fa-solid fa-tv"></i></a>
+        <a href="Recommend.html" title="Recommend"><i class="left-menue-icon fa-brands fa-yelp"></i></a>
+        <a href="Top10.html" title="Top10"><i class="left-menue-icon fa-solid fa-ranking-star"></i></a>
+        <a href="Account.html" title="Account"><i class="left-menue-icon fa-solid fa-user"></i></a>
+        <i id="settings-icon" title="Settings" class="left-menue-icon fa-solid fa-gear"></i>
+    </div>
+
+
+<div class="container">
+    <div class="content-container">
+        <div class="movie-content">
+        </div> 
+
+    </div>
+
+    
+
+    <div class="movie-list-container">
+        <h1 class="movie-lisst-title" >New Releases</h1>
+        <div class="wrapper">
+            <div class="movie-list">
+                <div class="main-list">
+                    <img class="movie-list-img" src="The Last of Us.webp" alt="The Last of Us">
+                    <span class="title">The Last of Us</span>
+                    <p class="movie-list-desc">A hardened survivor escorts a teenage girl across a post-apocalyptic America overrun by infected — and something far worse: humanity itself.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="House of the Dragon.webp" alt="House of the Dragon">
+                    <span class="title">House of the Dragon</span>
+                    <p class="movie-list-desc">The Targaryen dynasty tears itself apart in a brutal civil war for the Iron Throne, dragons and all, decades before Game of Thrones.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="seve.jpeg" alt="Severance">
+                    <span class="title">Severance</span>
+                    <p class="movie-list-desc">Employees at a mysterious corporation have their work and personal memories surgically divided — until one of them begins to question everything.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="thebear.webp" alt="The Bear">
+                    <span class="title">The Bear</span>
+                    <p class="movie-list-desc">A fine-dining chef returns to Chicago to run his family's chaotic sandwich shop, battling grief, ego, and a kitchen on the edge of collapse.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="fallout-poster1.jpg" alt="Fallout">
+                    <span class="title">Fallout</span>
+                    <p class="movie-list-desc">Two centuries after nuclear war, a vault dweller emerges into a savage wasteland in a desperate quest for truth and survival.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="shogun-2024-poster.avif" alt="Shōgun">
+                    <span class="title">Shōgun</span>
+                    <p class="movie-list-desc">A shipwrecked English navigator becomes a pawn in feudal Japan's deadly political games, where loyalty and betrayal shape the fate of a nation.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Dune-Prophecy.webp" alt="Dune: Prophecy">
+                    <span class="title">Dune: Prophecy</span>
+                    <p class="movie-list-desc">Ten thousand years before Paul Atreides, two sisters forge the secretive Bene Gesserit sisterhood to protect humanity from its own future.</p>
+                        <button class="watch">watch</button>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right arrow"></i>
+        </div>
+    </div>
+
+    <div class="movie-list-container">
+        <h1 class="movie-lisst-title" >Trending Now</h1>
+        <div class="wrapper">
+            <div class="movie-list">
+                <div class="main-list">
+                    <img class="movie-list-img" src="breaking.webp" alt="Breaking Bad">
+                    <span class="title">Breaking Bad</span>
+                    <p class="movie-list-desc">A mild-mannered chemistry teacher transforms into a ruthless drug kingpin after a cancer diagnosis forces him to reckon with his wasted potential.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Chernobyl.webp" alt="Chernobyl">
+                    <span class="title">Chernobyl</span>
+                    <p class="movie-list-desc">The gripping true story of the 1986 nuclear disaster and the extraordinary men and women who sacrificed everything to contain it.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Band of Brothers.webp" alt="Band of Brothers">
+                    <span class="title">Band of Brothers</span>
+                    <p class="movie-list-desc">The harrowing journey of Easy Company, 506th Regiment, from D-Day through the fall of Nazi Germany, told through the eyes of the men who lived it.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="The-Wire.webp" alt="The Wire">
+                    <span class="title">The Wire</span>
+                    <p class="movie-list-desc">A raw, unflinching look at the drug trade, law enforcement, and systemic failure in Baltimore — told from all sides of the war on crime.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="truedetectivebr.webp" alt="True Detective">
+                    <span class="title">True Detective</span>
+                    <p class="movie-list-desc">Two detectives with clashing worldviews investigate a ritualistic murder in Louisiana that pulls them into a 17-year long spiral of darkness.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="succ.png" alt="Succession">
+                    <span class="title">Succession</span>
+                    <p class="movie-list-desc">A media dynasty's ruthless patriarch pits his dysfunctional children against each other in a savage battle to control the family empire.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Fleabag.webp" alt="Fleabag">
+                    <span class="title">Fleabag</span>
+                    <p class="movie-list-desc">A sharp, funny, and deeply human portrait of a chaotic London woman navigating grief, desire, and a very complicated family.</p>
+                        <button class="watch">watch</button>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right arrow"></i>
+        </div>
+    </div>
+
+    <div class="movie-list-container">
+        
+        <div class="wrapper">
+            <div class="movie-list">
+                <div class="main-list">
+                    <img class="movie-list-img" src="yellowjackets-season 4.webp" alt="Yellowjackets">
+                    <span class="title">Yellowjackets</span>
+                    <p class="movie-list-desc">A high school soccer team survives a plane crash in the wilderness — and what they did to survive haunts them twenty-five years later.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="the-penguin-poster-hbo-original-cropped.jpg" alt="The Penguin">
+                    <span class="title">The Penguin</span>
+                    <p class="movie-list-desc">Oz Cobb claws his way to the top of Gotham's criminal underworld in the brutal aftermath of the Riddler's attack on the city.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Slow-Horses.webp" alt="Slow Horses">
+                    <span class="title">Slow Horses</span>
+                    <p class="movie-list-desc">Britain's disgraced MI5 agents, exiled to a dead-end office called Slough House, keep stumbling into real and deadly intelligence crises.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Andor.webp" alt="Andor">
+                    <span class="title">Andor</span>
+                    <p class="movie-list-desc">The gritty origin story of Rebel spy Cassian Andor, set years before Rogue One, in a galaxy slowly smothering under Imperial rule.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="The Diplomat.jpeg" alt="The Diplomat">
+                    <span class="title">The Diplomat</span>
+                    <p class="movie-list-desc">A pragmatic U.S. ambassador navigates a catastrophic international crisis in London while her marriage and career unravel in real time.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="White Lotus.webp" alt="White Lotus">
+                    <span class="title">White Lotus</span>
+                    <p class="movie-list-desc">Vacationers at an exclusive resort unravel over the course of a week in a darkly comic satire of privilege, desire, and quiet desperation.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="industry.webp" alt="Industry">
+                    <span class="title">Industry</span>
+                    <p class="movie-list-desc">Ambitious young graduates compete savagely for permanent positions at a London investment bank, where ambition and self-destruction go hand in hand.</p>
+                        <button class="watch">watch</button>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right arrow"></i>
+        </div>
+    </div>
+
+    <div class="movie-list-container">
+        <h1 class="movie-lisst-title" >Classic Series</h1>
+        <div class="wrapper">
+            <div class="movie-list">
+                <div class="main-list">
+                    <img class="movie-list-img" src="Sopranos.webp" alt="The Sopranos">
+                    <span class="title">The Sopranos</span>
+                    <p class="movie-list-desc">New Jersey mob boss Tony Soprano tries to balance family life with running a criminal empire, aided by weekly sessions with his psychiatrist.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="lost.webp" alt="Lost">
+                    <span class="title">Lost</span>
+                    <p class="movie-list-desc">Survivors of a plane crash on a mysterious island discover that the island has secrets far stranger and more dangerous than any of them could imagine.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="24.webp" alt="24">
+                    <span class="title">24</span>
+                    <p class="movie-list-desc">Counter-terrorism agent Jack Bauer races against the clock in real time to stop catastrophic threats to the United States in a single, brutal day.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Mad Men.webp" alt="Mad Men">
+                    <span class="title">Mad Men</span>
+                    <p class="movie-list-desc">The brilliant and enigmatic Don Draper navigates the cutthroat world of 1960s Madison Avenue advertising while hiding the truth of who he really is.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="Gameofthrones.jpg" alt="Game of Thrones">
+                    <span class="title">Game of Thrones</span>
+                    <p class="movie-list-desc">Noble families wage war and scheme for control of the Iron Throne in a vast, brutal fantasy world where winter — and death — is always coming.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="x-files.webp" alt="The X-Files">
+                    <span class="title">The X-Files</span>
+                    <p class="movie-list-desc">FBI agents Mulder and Scully investigate the paranormal, uncovering government conspiracies, alien threats, and the terrifying unknown.</p>
+                        <button class="watch">watch</button>
+                </div>
+                <div class="main-list">
+                    <img class="movie-list-img" src="friends.jpeg" alt="Friends">
+                    <span class="title">Friends</span>
+                    <p class="movie-list-desc">Six friends navigate love, careers, and the chaos of adult life in New York City across ten unforgettable seasons of laughter and heart.</p>
+                        <button class="watch">watch</button>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right arrow"></i>
+        </div>
+    </div>
+
+
+
+</div>
+
+<footer class="footer">
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <h2>Screenly</h2>
+                <p>Your place to discover, explore, and review movies & TV shows. Built by film lovers, for film lovers.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-compass"></i> Navigate</h4>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+                <a href="Tv-Shows.html"><i class="fa-solid fa-tv"></i> TV Shows</a>
+                <a href="Top10.html"><i class="fa-solid fa-ranking-star"></i> Top 10</a>
+                <a href="Recommend.html"><i class="fa-brands fa-yelp"></i> Recommend</a>
+            </div>
+
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-user"></i> Account</h4>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="Signup.html"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                <a href="Account.html"><i class="fa-solid fa-circle-user"></i> My Account</a>
+                <a href="contact_us.html"><i class="fa-solid fa-at"></i> Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-stats">
+            <div class="footer-stat">
+                <i class="fa-solid fa-film"></i>
+                <span>500+ Movies</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-tv"></i>
+                <span>300+ TV Shows</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-star"></i>
+                <span>10K+ Reviews</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-users"></i>
+                <span>50K+ Users</span>
+            </div>
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+            <p>Â© 2026 Screenly. All rights reserved. Built with passion for film lovers.
+                Created By FCAI-HU
+            </p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
