@@ -23,6 +23,18 @@ window.onload = function () {
     }
 };
 
+function addToFavorites(title, poster) {
+    let fav = JSON.parse(localStorage.getItem("favorites")) || [];
+    let index = fav.findIndex(item => item.title === title);
+    if (index > -1) {
+        fav.splice(index, 1);
+    } else {
+        fav.unshift({ title, poster });
+    }
+    if (fav.length > 5) fav.pop();
+    localStorage.setItem("favorites", JSON.stringify(fav));
+}
+
 let card =
 {
     title: ["Project Hail Mary", "Interstellar", "Oppenheimer", "Inception", "The Dark Knight", "The Lord of the Rings",
@@ -34,11 +46,11 @@ let card =
     ],
 
 
-    image: ['imgs\\projectHail.jpg', 'imgs\\interstellar.jpg', 'imgs\\oppenheimer.jpg', 'imgs\\inception.jpg', 'imgs\\darkKnight.jpg',
-        'imgs\\lordOfTheRings.jpg', 'imgs\\it.jpg', 'imgs\\wonderWoman.jpg', 'imgs\\bladeRunner.jpg', 'imgs\\avengers.jpg', 'imgs\\blackPanther.jpg', 'imgs\\joker.jpg'
-        , "imgs\\killerOfTheFlower.jpg", 'imgs\\parasite.jpg', 'imgs\\tenet.jpg', 'imgs\\dune.jpg', 'imgs\\batman.jpg', 'imgs\\spiderMan.jpg', 'imgs\\babyDriver.jpg', 'imgs\\readyPlayer.jpg',
-        'imgs\\battleAng.jpg', 'imgs\\jojo.jpg', 'imgs\\soul.jpg', 'imgs\\inv.jpg', 'imgs\\palm.jpg', 'imgs\\spiderman2.jpg', 'imgs\\freeGuy.jpg', 'imgs\\noTime.jpg', 'imgs\\topGun.jpg', 'imgs\\menu.jpg',
-        'imgs\\glassOnion.jpg', 'imgs\\superMario.jpg', 'imgs\\barbie.jpg', 'imgs\\abigail.jpg', 'imgs\\deadAwolf.jpg', 'imgs\\wildRob.jpg', "imgs\\furiosaAMad.jpg"],
+    image: ['imgs/projectHail.jpg', 'imgs/interstellar.jpg', 'imgs/oppenheimer.jpg', 'imgs/inception.jpg', 'imgs/darkKnight.jpg',
+        'imgs/lordOfTheRings.jpg', 'imgs/it.jpg', 'imgs/wonderWoman.jpg', 'imgs/bladeRunner.jpg', 'imgs/avengers.jpg', 'imgs/blackPanther.jpg', 'imgs/joker.jpg'
+        , "imgs/killerOfTheFlower.jpg", 'imgs/parasite.jpg', 'imgs/tenet.jpg', 'imgs/dune.jpg', 'imgs/batman.jpg', 'imgs/spiderMan.jpg', 'imgs/babyDriver.jpg', 'imgs/readyPlayer.jpg',
+        'imgs/battleAng.jpg', 'imgs/jojo.jpg', 'imgs/soul.jpg', 'imgs/inv.jpg', 'imgs/palm.jpg', 'imgs/spiderman2.jpg', 'imgs/freeGuy.jpg', ' imgs/noTime.jpg', ' imgs/topGun.jpg', ' imgs/menu.jpg',
+        ' imgs/glassOnion.jpg', ' imgs/superMario.jpg', ' imgs/barbie.jpg', ' imgs/abigail.jpg', ' imgs/deadAwolf.jpg', ' imgs/wildRob.jpg', " imgs/furiosaAMad.jpg"],
     description: ["A science teacher wakes up alone on a spaceship. As his memory returns, he uncovers a mission to stop a mysterious substance killing Earth's sun and that an unexpected friendship may be the key.",
         "In a dystopian future where Earth has become near-uninhabitable, a team of astronauts embark on a mission to find a new home for humanity.",
         "A dramatization of the life story of J. Robert Oppenheimer, the physicist who had a large hand in the development of the atomic bombs that brought an end to World War II.",
@@ -184,6 +196,13 @@ function showMovies(movie, filterType = "All", filterReleaseDate = "All") {
             let favList = JSON.parse(localStorage.getItem("favorites")) || [];
             let isFav = favList.some(item => item.title === movie.title[i]);
 
+            addToFa.addEventListener('click', function () {
+                addToFavorites(movie.title[i], movie.image[i]);
+                let updatedFavs = JSON.parse(localStorage.getItem("favorites")) || [];
+                let nowFav = updatedFavs.some(item => item.title === movie.title[i]);
+                addToFa.className = nowFav ? "fa-solid fa-heart" : "fa-regular fa-heart";
+            });
+
             titleEl.setAttribute = "class";
             titleEl.classList = ("movieinfo");
             descEl.setAttribute = "class";
@@ -235,17 +254,3 @@ typeSelect.addEventListener("change", applyFilters);
 releaseDateSelect.addEventListener("change", applyFilters);
 
 showMovies(card);
-
-function addToFavorites(title, poster) {
-    let fav = JSON.parse(localStorage.getItem("favorites")) || [];
-    let index = fav.findindex(item => item.title === title);
-    if (index > -1) {
-        fav.splice(index, 1)
-    }
-    else {
-        fav.unshift({ title, poster });
-    }
-    if (fav.length > 5) fav.pop();
-    localStorage.setItem("favorites", JSON.stringify(fav));
-    applyFilters();
-}
