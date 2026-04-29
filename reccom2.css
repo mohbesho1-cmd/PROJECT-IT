@@ -6,21 +6,18 @@ reccom2.css — Light Theme
     margin: 0;
 }
 
-/* BODY: light background instead of dark #121212 */
 body {
-    background-color: #f5f0ff;
+    background-color: #F5F4F0;
     font-family: "Roboto", sans-serif;
     color: #1a1a1a;
 }
 
-/* ── HEADER ──────────────────────────────────────────*/
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 12px rgba(174, 124, 255, 0.15);
+    background-color: #F5F4F0;
     position: relative;
 }
 
@@ -28,22 +25,17 @@ body {
     text-decoration: none;
 }
 
-/* Logo: purple instead of white */
 .logo {
     font-size: 40px;
-    color:#5a2d9c;
+    color: #3a1a7a;
     margin-left: 70px;
     padding: 5px;
 }
-.logo:hover{
-    color:#3a1a7a;
-}
 
-/* ── SIDEBAR ─────────────────────────────────────────*/
 .sidebar {
     width: 50px;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #ECEAE4;
     position: fixed;
     top: 0;
     display: flex;
@@ -52,29 +44,25 @@ body {
     gap: 10px;
     padding-top: 110px;
     align-items: center;
-    box-shadow: 5px 0px 15px -4px rgba(174, 124, 255, 0.2);
+    border-right: 1px solid rgba(90, 45, 156, 0.15);
 }
 
-/* Icons: dark color in light mode */
 .left-menue-icon {
-    color: #3a1a7a;
+    color: #5a2d9c;
     font-size: 20px;
     margin-bottom: 40px;
     transition: 0.3s;
 }
 
-/* Hover: purple accent */
 .left-menue-icon:hover {
-    color: #ae7cff;
+    color: #3a1a7a;
     transform: scale(1.7) translateY(-5px);
 }
 
-/* Settings icon */
 #settings-icon {
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
-/* ── AUTH LINKS ──────────────────────────────────────*/
 .authentication {
     display: flex;
     gap: 15px;
@@ -84,24 +72,23 @@ body {
 .auth-link {
     font-size: 20px;
     text-decoration: none;
-    color: #1a1a1a;
+    color: #3a1a7a;
     font-weight: 500;
     padding: 5px 10px;
     transition: 0.2s;
 }
 
 .auth-link:hover {
-    background-color: #f0e8ff;
-    color: #ae7cff;
+    background-color: #e8e2f5;
+    color: #5a2d9c;
     border-radius: 12px;
     transform: translateY(15px);
 }
 
-/* ── TOGGLE ──────────────────────────────────────────*/
 .toggle {
     width: 50px;
     height: 25px;
-    background-color: #ddd;
+    background-color: #ddd8f0;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -111,19 +98,22 @@ body {
 }
 
 .toggle-icon {
-    color: #888;
+    color: #5a2d9c;
     font-size: 12px;
 }
 
-/* Ball: purple, on left side = light mode active */
 .toggle-ball {
     width: 20px;
     height: 20px;
-    background-color: #ae7cff;
+    background-color: #7c4dcc;
     position: absolute;
-    left: 2px;
+    right: 2px;
     border-radius: 50%;
     transition: 0.3s;
+}
+
+body.dark .toggle-ball {
+    transform: translateX(-25px);
 }
 
 /* ── DIVIDER LINE ────────────────────────────────────*/
