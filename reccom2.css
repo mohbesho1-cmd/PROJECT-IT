@@ -31,9 +31,12 @@ body {
 /* Logo: purple instead of white */
 .logo {
     font-size: 40px;
-    color:#1a1a1a;
+    color:#5a2d9c;
     margin-left: 70px;
     padding: 5px;
+}
+.logo:hover{
+    color:#3a1a7a;
 }
 
 /* ── SIDEBAR ─────────────────────────────────────────*/
@@ -54,7 +57,7 @@ body {
 
 /* Icons: dark color in light mode */
 .left-menue-icon {
-    color: #333;
+    color: #3a1a7a;
     font-size: 20px;
     margin-bottom: 40px;
     transition: 0.3s;
