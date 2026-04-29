@@ -1,0 +1,365 @@
+/* =====================================================
+reccom2.css — Light Theme
+===================================================== */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* BODY: light background instead of dark #121212 */
+body {
+    background-color: #f5f0ff;
+    font-family: "Roboto", sans-serif;
+    color: #1a1a1a;
+}
+
+/* ── HEADER ──────────────────────────────────────────*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(174, 124, 255, 0.15);
+    position: relative;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+/* Logo: purple instead of white */
+.logo {
+    font-size: 40px;
+    color:#1a1a1a;
+    margin-left: 70px;
+    padding: 5px;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────*/
+.sidebar {
+    width: 50px;
+    height: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 10px;
+    padding-top: 110px;
+    align-items: center;
+    box-shadow: 5px 0px 15px -4px rgba(174, 124, 255, 0.2);
+}
+
+/* Icons: dark color in light mode */
+.left-menue-icon {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 40px;
+    transition: 0.3s;
+}
+
+/* Hover: purple accent */
+.left-menue-icon:hover {
+    color: #ae7cff;
+    transform: scale(1.7) translateY(-5px);
+}
+
+/* Settings icon */
+#settings-icon {
+    margin-top: 80px;
+}
+
+/* ── AUTH LINKS ──────────────────────────────────────*/
+.authentication {
+    display: flex;
+    gap: 15px;
+    margin-left: 1020px;
+}
+
+.auth-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: 0.2s;
+}
+
+.auth-link:hover {
+    background-color: #f0e8ff;
+    color: #ae7cff;
+    border-radius: 12px;
+    transform: translateY(15px);
+}
+
+/* ── TOGGLE ──────────────────────────────────────────*/
+.toggle {
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Ball: purple, on left side = light mode active */
+.toggle-ball {
+    width: 20px;
+    height: 20px;
+    background-color: #ae7cff;
+    position: absolute;
+    left: 2px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* ── DIVIDER LINE ────────────────────────────────────*/
+.line {
+    border: none;
+    height: 2px;
+    width: 80%;
+    margin: 30px auto;
+    background: linear-gradient(to right, transparent, #ba95f7, transparent);
+}
+
+/* ── WELCOME TEXT ────────────────────────────────────*/
+.welcome-text {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3%;
+}
+
+/* Animated purple gradient text */
+#Recommendations-text {
+    background: linear-gradient(45deg, #ae7cff, #ba95f7, #000000, #ae7cff);    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorChange 3s ease-in-out infinite;
+    font-size: 70px;
+}
+
+/* Slogan: dark for readability on light background */
+#Slogan {
+    color: #444;
+    font-size: 17px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Gradient animation keyframes */
+@keyframes colorChange {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ── MOVIES SECTION ──────────────────────────────────*/
+.movies-section {
+    margin: 80px 0;
+    margin-left: 90px;
+    border: 2px solid #1a1a1a;      /* border بنفسجي */
+    border-radius: 20px;             /* زوايا مدورة */
+    padding: 20px;                   /* مسافة داخلية */
+    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2); /* ضل بنفسجي خفيف */
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
+
+/* Section title: purple */
+.section-header h2,
+.section-title {
+    color: #333;
+    font-size: 26px;
+}
+
+.section-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* Scroll buttons: purple on light background */
+.btn-left, .btn-right {
+    display: none;
+}
+
+
+/* ── MOVIES ROW ──────────────────────────────────────*/
+.movies-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+    padding: 0 50px;
+    height: 400px;        /* ارتفاع ثابت - يظهر صف واحد وشوية من التاني */
+    overflow-y: scroll;   /* سكرول بالطول داخل الـ container */
+    overflow-x: hidden;
+}
+
+/* ── MOVIE CARD ──────────────────────────────────────*/
+.movie-card {
+    height: 340px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 15px rgba(174, 124, 255, 0.25);
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(174, 124, 255, 0.4);
+}
+
+.movie-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 55px;
+    left: 14px;
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 13px;
+    z-index: 2;
+}
+
+/* Rating badge: purple */
+.movie-rate {
+    background: #ae7cff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: white;
+}
+
+.movie-year {
+    opacity: 0.9;
+    border: solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 5px 8px;
+    color: white;
+}
+
+.movie-title {
+    position: absolute;
+    bottom: 18px;
+    left: 14px;
+    right: 14px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* ── SERIES SECTION ──────────────────────────────────*/
+.series-section {
+    margin: 80px 0;
+    margin-left: 90px;
+    border: 2px solid #1a1a1a;      /* border بنفسجي */
+    border-radius: 20px;             /* زوايا مدورة */
+    padding: 20px;                   /* مسافة داخلية */
+    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2); /* ضل بنفسجي خفيف */
+}
+
+.series-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+    padding: 0 50px;
+    height: 400px;        /* ارتفاع ثابت - يظهر صف واحد وشوية من التاني */
+    overflow-y: scroll;   /* سكرول بالطول داخل الـ container */
+    overflow-x: hidden;
+}
+
+/* ── SERIES CARD ─────────────────────────────────────*/
+.series-card {
+    height: 340px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 15px rgba(174, 124, 255, 0.25);
+    cursor: pointer;
+}
+
+.series-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(174, 124, 255, 0.4);
+}
+
+.series-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
+}
+
+.series-info {
+    position: absolute;
+    bottom: 55px;
+    left: 14px;
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 13px;
+    z-index: 2;
+}
+
+/* Rating badge: purple */
+.series-rate {
+    background: #ae7cff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: white;
+}
+
+.series-year {
+    opacity: 0.9;
+    border: solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 5px 8px;
+    color: white;
+}
+
+.series-title {
+    position: absolute;
+    bottom: 18px;
+    left: 14px;
+    right: 14px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* ── GRID CONTAINERS ─────────────────────────────────*/
+.Recomm-Movies-container,
+.Recomm-Series-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px 80px;
+}
