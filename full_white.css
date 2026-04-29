@@ -5,17 +5,19 @@
 }
 
 body {
-    background-color: #F5F4F0;
+    background: rgba(90, 45, 156, 0.04);
     font-family: "Roboto", sans-serif;
-    color: #1a1a1a;
+    
 }
 
 .header {
     display: flex;
     align-items: center;
+    /* vertically center */
     justify-content: space-between;
+    /* space between logo & nav */
     padding: 10px 20px;
-    background-color: #F5F4F0;
+    box-shadow: 22px 5px 15px 0px rgba(0, 0, 0, 0);
     position: relative;
 }
 
@@ -25,15 +27,16 @@ body {
 
 .logo {
     font-size: 40px;
-    color: #3a1a7a;
+    color: #5a2d9c;
     margin-left: 70px;
     padding: 5px;
 }
 
+/* SIDEBAR */
 .sidebar {
     width: 50px;
     height: 100%;
-    background-color: #ECEAE4;
+    background-color:white;
     position: fixed;
     top: 0;
     display: flex;
@@ -42,23 +45,28 @@ body {
     gap: 10px;
     padding-top: 110px;
     align-items: center;
-    border-right: 1px solid rgba(90, 45, 156, 0.15);
+    box-shadow: 5px 0px 15px -4px #d8c4f7;
+    
 }
 
+/* ICON STYLE */
 .left-menue-icon {
     color: #5a2d9c;
     font-size: 20px;
     margin-bottom: 40px;
+    /* smooth animation */
     transition: 0.3s;
 }
 
+/* HOVER POP EFFECT */
 .left-menue-icon:hover {
-    color: #3a1a7a;
+    color: #5a2d9c;
     transform: scale(1.7) translateY(-5px);
 }
 
+/* SETTINGS ICON SPACING */
 #settings-icon {
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .authentication {
@@ -70,19 +78,20 @@ body {
 .auth-link {
     font-size: 20px;
     text-decoration: none;
-    color: #3a1a7a;
+    color: #5a2d9c;
     font-weight: 500;
     padding: 5px 10px;
     transition: 0.2s;
 }
 
 .auth-link:hover {
-    background-color: #e8e2f5;
+    /* background-color: #000000; */
     color: #5a2d9c;
     border-radius: 12px;
     transform: translateY(15px);
 }
 
+/* TOGGLE */
 .toggle {
     width: 50px;
     height: 25px;
