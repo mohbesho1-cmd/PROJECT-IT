@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Screenly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link id="theme-style" rel="stylesheet" href="reccom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <h1 class="logo">Screenly</h1>
+        </a>
+        <div class="authentication">
+            <a href="login.html" id="login" title="Already have an account" class="auth-link">Login</a>
+            <a href="Signup.html" id="signup" title="Create a new account" class="auth-link">Sign up</a>
+        </div>
+        <div class="toggle" onclick="toggleTheme()">
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <div class="toggle-ball"></div>
+        </div>
+    </header>
+    <hr class="line">
+    <div class="sidebar">
+        <a href="index.html" title="Main page"><i class="left-menue-icon fa-solid fa-house"></i></a>
+        <a href="search.html" title="Search"><i class="left-menue-icon fa-solid fa-magnifying-glass"></i></a>
+        <a href="Movies.html" title="Movies"><i class="left-menue-icon fa-solid fa-film"></i></a>
+        <a href="Tv-Shows.html" title="TV-Shows"><i class="left-menue-icon fa-solid fa-tv"></i></a>
+        <a href="Recommend.html" title="Recommend"><i class="left-menue-icon fa-brands fa-yelp"></i></a>
+        <a href="Top10.html" title="Top10"><i class="left-menue-icon fa-solid fa-ranking-star"></i></a>
+        <a href="Account.html" title="Account"><i class="left-menue-icon fa-solid fa-user"></i></a>
+        <i id="settings-icon" title="Settings" class="left-menue-icon fa-solid fa-gear"></i>
+    </div>
+    <div class ="welcome-text">
+        <h3 id="Recommendations-text">Recommendations</h3>
+        <p id="Slogan">"Where Every Recommendation Feels Like Your Next Favorite"</p>
+    </div>
+    <!-- Movies Section -->
+    <div class="movies-section">
+    <div class="section-header">
+    <h2 class="section-title">Recommended Movies For You</h2>
+
+    <div class="section-buttons">
+        <button class="btn-left" >
+        <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button class="btn-right">
+        <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </div>
+    </div>
+
+    <!--Row -->
+    <div class="movies-row Recomm-Movies-container" id="recommRow"></div>
+    </div>
+
+    <div class="series-section">
+        <div class="section-header">
+        <h2 class="section-title">Recommended Series For You</h2>
+
+        <div class="section-buttons">
+            <button class="btn-left" >
+            <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button class="btn-right">
+            <i class="fa-solid fa-angle-right"></i>
+            </button>
+            </div>
+        </div>
+    <!--Row -->
+    <div class="series-row Recomm-Series-container" id="rrecommRow"></div>
+    </div>
+    </div>
+    <script src="reccom.js"></script>
+</body>
+
+</html>
