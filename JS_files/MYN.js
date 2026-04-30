@@ -9,6 +9,7 @@ function toggleTheme() {
         theme.setAttribute("href", "css_files/MYN.css");
         localStorage.setItem("theme", "dark");
     }
+    checkGenreVisibility();
 }
 
 // load saved theme
@@ -244,13 +245,49 @@ function showMovies(movie, filterType = "All", filterReleaseDate = "All") {
 
     }
 }
-
 let typeSelect = document.querySelector("#type-select");
 let releaseDateSelect = document.querySelector("#release-date");
-
 function applyFilters() { showMovies(card, typeSelect.value, releaseDateSelect.value); }
 
 typeSelect.addEventListener("change", applyFilters);
 releaseDateSelect.addEventListener("change", applyFilters);
 
+const genreNameDisplay = document.createElement("span");
+genreNameDisplay.id = "active-genre-name";
+const prevBtn = document.getElementById("prev-genre");
+const nextBtn = document.getElementById("next-genre");
+const displayContainer = document.querySelector(".current-genre-display");
+if (displayContainer) {
+    displayContainer.appendChild(genreNameDisplay);
+}
+function updateGenreUI(direction) {
+    if (!typeSelect) return;
+    let currentIndex = typeSelect.selectedIndex;
+    let totalOptions = typeSelect.options.length
+    if (direction === "next") {
+        typeSelect.selectedIndex = (currentIndex + 1) % totalOptions;
+    }
+    else {
+        typeSelect.selectedIndex = (currentIndex - 1 + totalOptions) % totalOptions;
+    }
+    if (genreNameDisplay) {
+        genreNameDisplay.innerText = typeSelect.options[typeSelect.selectedIndex].text;
+    }
+    applyFilters();
+}
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => updateGenreUI("prev"));
+    nextBtn.addEventListener("click", () => updateGenreUI("next"));
+}
+function checkGenreVisibility() {
+    const sliderWrapper = document.querySelector(".genre-slider-wrapper");
+    if (sliderWrapper) {
+        let theme = document.getElementById("theme-style").getAttribute("href");
+    }
+}
+
+
+
+
 showMovies(card);
+

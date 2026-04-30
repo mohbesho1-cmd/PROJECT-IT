@@ -44,7 +44,6 @@
     <main>
         <section class="control">
             <div class="underName">
-                <img src="imgs/" alt="">
                 <h2>Movies</h2>
                 <div class="choose-type">
                     <select name="type" id="type-select" class="type-select">
@@ -78,6 +77,28 @@
                     <option value="2017">2017</option>
                 </select>
             </div>
+            <div class="genre-slider-wrapper">
+                <button id="prev-genre" class="slider-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="current-genre-display"><span id="active-genre-name">type</span>
+                    <select name="type" id="type-select" class="type-select" style="display: none;">
+                        <option value="All">All</option>
+                        <option value="Action">Action</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Horror">Horror</option>
+                    </select>
+                </div>
+                <button id="next-genre" class="slider-arrow"><i class="fa-solid fa-chevron-right"> </i></button>
+            </div>
+
             <div class="movies-container">
 
             </div>
