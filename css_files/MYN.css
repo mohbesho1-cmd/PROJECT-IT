@@ -161,6 +161,10 @@ main .control .underName {
     flex-wrap: wrap;
 }
 
+.genre-slider-wrapper {
+    display: none;
+}
+
 select#type-select,
 select#release-date {
     background-color: #5a2d9c;
@@ -188,6 +192,8 @@ select#release-date {
 .add {
     background-color: #121212;
     border: 1px solid #121212;
+    flex: none;
+    width: 100%;
 }
 
 .movieinfo,
@@ -443,6 +449,18 @@ a.linkc {
     .toggle {
         position: absolute;
         right: 20px;
-        top: 15px;
+        top: 32px;
+    }
+}
+
+@media (max-width:450px) {
+    .toggle {
+        position: absolute;
+        right: -50px;
+        top: 93px;
+    }
+
+    main .control .underName {
+        width: 120%;
     }
 }
