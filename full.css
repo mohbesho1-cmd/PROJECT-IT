@@ -34,6 +34,7 @@ body {
     padding: 5px;
 }
 
+/* SIDEBAR */
 .sidebar {
     width: 50px;
     height: 100%;
@@ -46,7 +47,7 @@ body {
     gap: 10px;
     padding-top: 110px;
     align-items: center;
-    box-shadow: 5px 0px 15px -4px rgba(0, 0, 0, 0.462);
+    box-shadow: 5px 0px 15px -4px rgba(125, 125, 125, 0.462);
 }
 
 /* ICON STYLE */
@@ -72,7 +73,7 @@ body {
 .authentication {
     display: flex;
     gap: 15px;
-    margin-left: 1000px;
+    margin-left: 1020px;
 }
 
 .auth-link {
@@ -85,11 +86,12 @@ body {
 }
 
 .auth-link:hover {
-    background-color: #000000a1;
+    background-color: #000000;
     color: #ae7cff;
     border-radius: 12px;
     transform: translateY(15px);
 }
+
 
 /* Toggle container */
 .toggle {
@@ -121,16 +123,6 @@ body {
     transition: 0.3s;
 }
 
-/* Dark mode */
-body.dark {
-    background-color: #121212;
-    color: white;
-}
-
-/* Move ball when active */
-body.dark .toggle-ball {
-    transform: translateX(-25px);
-}
 
 .container{
     background-color:#151515;
