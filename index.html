@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Screenly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link id="theme-style" rel="stylesheet" href="home-css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <h1 class="logo">Screenly</h1>
+        </a>
+        <div class="authentication">
+            <a href="login.html" id="login" title="Already have an account" class="auth-link">Login</a>
+            <a href="Signup.html" id="signup" title="Create a new account" class="auth-link">Sign up</a>
+        </div>
+        <div class="toggle" onclick="toggleTheme()">
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <div class="toggle-ball"></div>
+        </div>
+    </header>
+    <hr class="line">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Screenly</h1>
+            <p>Your place to discover, explore, and review movies & TV shows.</p>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="index.html" title="Main page"><i class="left-menue-icon fa-solid fa-house"></i></a>
+        <a href="search.html" title="Search"><i class="left-menue-icon fa-solid fa-magnifying-glass"></i></a>
+        <a href="Movies.html" title="Movies"><i class="left-menue-icon fa-solid fa-film"></i></a>
+        <a href="Tv-Shows.html" title="TV-Shows"><i class="left-menue-icon fa-solid fa-tv"></i></a>
+        <a href="Recommend.html" title="Recommend"><i class="left-menue-icon fa-brands fa-yelp"></i></a>
+        <a href="Top10.html" title="Top10"><i class="left-menue-icon fa-solid fa-ranking-star"></i></a>
+        <a href="Account.html" title="Account"><i class="left-menue-icon fa-solid fa-user"></i></a>
+        <a href="contact_us.html" title="Contact us"><i class="left-menue-icon fa-solid fa-at"></i></a>
+        <i id="settings-icon" title="Settings" class="left-menue-icon fa-solid fa-gear"></i>
+    </div>
+    <div class="aboutus">
+        <div class="card">
+            <h3><strong>Who We Are</strong></h3>
+            <p>
+                <i> We are a group of students passionate about movies and series. Our goal is to create a
+                    simple and enjoyable platform where anyone can explore, rate, and share opinions on their favorite
+                    content.</i>
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What Our Site Does</h3>
+            <p>
+                <i>Our website allows users to browse movies and shows, read reviews, and give their
+                    own ratings. It’s designed to help you discover new content and see what others think before you
+                    watch.</i>
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Why Choose Us</h3>
+            <p>
+                <i>We focus on simplicity and honest opinions. Our platform is easy to use, fast, and
+                    built for movie lovers who want quick access to ratings and real reviews without any confusion.</i>
+            </p>
+        </div>
+    </div>
+    <div class="newspara">
+        <h2>Recent News</h2>
+    </div>
+    <div class="news-section">
+
+        <!-- LEFT SIDE (DETAIL VIEW) -->
+        <div class="news-left" id="newsDetail">
+            <img src="home-material/cinephile.jpg" id="moviePoster">
+
+            <button id="trailerBtn" class="trailer-btn" onclick="openTrailer()">
+                <i class="fa-solid fa-circle-play"></i> Watch Trailer
+            </button>
+
+            <div id="trailerOverlay" class="trailer-overlay" onclick="closeTrailer(event)">
+                <div class="trailer-modal">
+                    <button class="close-btn" onclick="closeTrailer()">✕</button>
+                    <iframe id="movieTrailer" width="100%" height="100%" src="" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h2 id="movieTitle">Recent Drops</h2>
+            <p id="movieDesc">Click on a title from the right to see it's details.</p>
+        </div>
+
+        <!-- RIGHT SIDE (LIST) -->
+        <div class="news-right">
+
+            <div class="news-item" onclick="showMovie(0)">
+                <h3>The Drama</h3>
+            </div>
+
+            <div class="news-item" onclick="showMovie(1)">
+                <h3>Euphoria</h3>
+            </div>
+
+            <div class="news-item" onclick="showMovie(2)">
+                <h3>Daredevil</h3>
+            </div>
+            <div class="news-item" onclick="showMovie(3)">
+                <h3>Mortal Kombat</h3>
+            </div>
+            <div class="news-item" onclick="showMovie(4)">
+                <h3>The Odyssey</h3>
+            </div>
+            <div class="news-item" onclick="showMovie(5)">
+                <h3>Spiderman : Brand new day</h3>
+            </div>
+            <div class="news-item" onclick="showMovie(6)">
+                <h3>The Boys</h3>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="buzz-section">
+        <h2 class="buzz-title">Hollywood Buzz</h2>
+
+        <div class="buzz-item">
+            <div class="buzz-text">
+                <h3>Matt Reeves Teases What's Coming in The Batman 2</h3>
+                <p>
+                <p>Director Matt Reeves has been quietly building one of the most ambitious sequels in comic book
+                    history. Following the massive success of The Batman in 2022, which grossed nearly $770 million
+                    worldwide, Reeves is now pushing the story even further into darkness. Sources close to the
+                    production suggest that this time Bruce Wayne will face a threat that doesn't just challenge him
+                    physically, but breaks him psychologically. Robert Pattinson has described the upcoming film as more
+                    intense and emotionally complex than the first, and with a larger budget and more creative freedom,
+                    fans are expecting something truly groundbreaking from Gotham's darkest chapter yet.</p>
+                </p>
+                <a href="https://www.imdb.com/news/ni65054372/" target="_blank" class="buzz-link-btn">Read Full Article
+                    →</a>
+            </div>
+        </div>
+
+        <div class="buzz-item">
+            <div class="buzz-text">
+                <h3>The Russo Brothers on Avengers: Doomsday's Emotional Stakes</h3>
+                <p>After years of buildup across dozens of Marvel films and series, Avengers: Doomsday is shaping up to
+                    be the most ambitious crossover event since Endgame. The Russo Brothers are back in the director's
+                    chairs, bringing with them the same vision and scale that made Infinity War and Endgame cultural
+                    landmarks. What makes this entry truly special is the collision of universes — fan-favorite X-Men
+                    actors are returning alongside the core Avengers, and Robert Downey Jr. is back not as Iron Man, but
+                    as the terrifying Doctor Doom. With a cast of over 26 confirmed characters and a story that spans
+                    the entire multiverse, Doomsday is set to redefine the MCU all over again.</p>
+                <a href="https://www.imdb.com/news/ni65202736/" target="_blank" class="buzz-link-btn">Read Full Article
+                    →</a>
+            </div>
+        </div>
+        <div class="buzz-item">
+            <div class="buzz-text">
+                <h3>Christopher Nolan's The Odyssey Is Already Being Called a Masterpiece</h3>
+                <p>Christopher Nolan has never been one to shy away from ambitious storytelling, but his latest project
+                    may be his most daring yet. Adapting Homer's ancient Greek epic for the modern big screen, Nolan is
+                    bringing together one of the most staggering casts ever assembled — featuring Matt Damon, Anne
+                    Hathaway, Zendaya, Tom Holland, Lupita Nyong'o, and Robert Pattinson among others. Shot across
+                    multiple continents using large format film cameras, early reports from the set describe visuals
+                    that are nothing short of breathtaking. Universal Pictures has already positioned it as the prestige
+                    event of 2026, and with Nolan's track record of delivering films that redefine cinema, the industry
+                    is watching this one very closely. The Odyssey is not just a movie — it is shaping up to be a once
+                    in a generation cinematic experience.</p>
+                <a href="https://www.imdb.com/news/ni65035427/" target="_blank" class="buzz-link-btn">Read full article
+                    →</a>
+            </div>
+        </div>
+        <div class="buzz-item">
+            <div class="buzz-text">
+                <h3>Zendaya Is Everywhere — And She's Just Getting Started</h3>
+                <p>From her Emmy-winning role as Rue in Euphoria to her blockbuster turn in Dune and her critically
+                    praised performance in Challengers, Zendaya has cemented herself as the defining actress of her
+                    generation. With Euphoria Season 3 on the horizon and multiple untitled projects rumored to be in
+                    development, Hollywood can't seem to get enough of her — and neither can audiences. At just 29 years
+                    old, she's already rewriting what it means to be a leading woman in film and television.</p>
+                <a href="https://deadline.com/lists/upcoming-zendaya-movies-tv-shows/" target="_blank"
+                    class="buzz-link-btn">Read full article →</a>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <h2>Screenly</h2>
+                <p>Your place to discover, explore, and review movies & TV shows. Built by film lovers, for film lovers.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-compass"></i> Navigate</h4>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+                <a href="Tv-Shows.html"><i class="fa-solid fa-tv"></i> TV Shows</a>
+                <a href="Top10.html"><i class="fa-solid fa-ranking-star"></i> Top 10</a>
+                <a href="Recommend.html"><i class="fa-brands fa-yelp"></i> Recommend</a>
+            </div>
+
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-user"></i> Account</h4>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="Signup.html"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                <a href="Account.html"><i class="fa-solid fa-circle-user"></i> My Account</a>
+                <a href="contact_us.html"><i class="fa-solid fa-at"></i> Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-stats">
+            <div class="footer-stat">
+                <i class="fa-solid fa-film"></i>
+                <span>500+ Movies</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-tv"></i>
+                <span>300+ TV Shows</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-star"></i>
+                <span>10K+ Reviews</span>
+            </div>
+            <div class="footer-stat">
+                <i class="fa-solid fa-users"></i>
+                <span>50K+ Users</span>
+            </div>
+        </div>
+
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+            <p>© 2026 Screenly. All rights reserved to FCAI CAPITAL UNI. Built with passion for film lovers.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
