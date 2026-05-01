@@ -53,7 +53,7 @@ const movies = [
         title: "The Odyssey – A Legendary Journey Reimagined for a New Era",
         desc: "The Odyssey reimagines the classic epic tale of survival, courage, and destiny as a hero battles against gods, monsters, and fate itself to return home. The story follows a long and dangerous journey filled with trials across unknown lands and seas, testing the limits of human endurance and willpower. With a modern cinematic vision, the film brings mythological scale, emotional depth, and breathtaking adventure to the screen.",
         poster: "home-material/THE ODYSSEY.jpg",
-        trailer: "home-material/YTDown.com_YouTube_THE-ODYSSEY-Official-Trailer-2026_Media_wvyNpWf3cZ0_001_1080p.mp4"
+        trailer: "home-material/THE ODYSSEY Official Trailer (2026).mp4"
     }, {
         title: "Spider-Man is back but everything has changed.",
         desc: "Spider-Man: Brand New Day follows Peter Parker as he tries to rebuild his life after everything he has lost. With his identity exposed and his world turned upside down, Peter faces the challenge of starting over while still protecting New York City. As new threats begin to rise and old enemies return in unexpected ways, he must find the strength to move forward without the support he once had. Every choice becomes heavier, and every battle pushes him further into a life where being Spider-Man means sacrificing normalcy for responsibility. In this new chapter, Peter learns that even after everything falls apart, a hero can still rise again.",
