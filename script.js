@@ -23,9 +23,11 @@ function toggleTheme() {
     if (theme.getAttribute("href") === "full.css") {
         theme.setAttribute("href", "full_white.css");
         localStorage.setItem("theme", "light");
+        document.body.classList.remove("dark");
     } else {
         theme.setAttribute("href", "full.css");
         localStorage.setItem("theme", "full");
+        document.body.classList.add("dark");
     }
 }
 
@@ -35,8 +37,10 @@ window.onload = function () {
 
     if (saved === "light") {
         document.getElementById("theme-style").href = "full_white.css";
+        document.body.classList.remove("dark");
     } else {
         document.getElementById("theme-style").href = "full.css";
+        document.body.classList.add("dark");
     }
 };
 
