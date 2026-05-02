@@ -1,0 +1,182 @@
+.search-wrapper {
+    background-color: #F5F4F0;
+}
+
+.search-title {
+    background: linear-gradient(135deg, #3a1a7a, #9b6de0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.search-bar-container {
+    background: #ffffff;
+    border-color: rgba(90, 45, 156, 0.3);
+    box-shadow: 0 8px 24px rgba(90, 45, 156, 0.1);
+}
+
+.search-bar-container:focus-within {
+    border-color: #5a2d9c;
+    box-shadow: 0 8px 32px rgba(90, 45, 156, 0.2);
+}
+
+.search-input {
+    color: #1a1a1a;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+}
+
+/* ── CLEAR BTN في الـ Light Mode ── */
+.clear-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 6px;
+    transition: 0.3s ease;
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.clear-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(90, 45, 156, 0.4);
+}
+
+.filter-tab {
+    background: rgba(90, 45, 156, 0.08);
+    border-color: rgba(90, 45, 156, 0.2);
+    color: #5a2d9c;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+    color: white;
+    border-color: transparent;
+}
+
+.results-header {
+    color: #666;
+}
+
+.results-header span {
+    color: #5a2d9c;
+}
+
+.result-card-poster-wrap {
+    background: linear-gradient(135deg, #e8e2f5, #ddd8f0);
+    border-color: rgba(90, 45, 156, 0.2);
+}
+
+.result-card-type {
+    color: #5a2d9c;
+}
+
+.result-card-title {
+    color: #1a1a1a;
+}
+
+.rate-badge {
+    background: rgba(90, 45, 156, 0.1);
+    border-color: rgba(90, 45, 156, 0.25);
+    color: #5a2d9c;
+}
+
+.rate-badge:hover {
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+    color: white;
+    box-shadow: 0 4px 14px rgba(90, 45, 156, 0.3);
+}
+
+.desc-card {
+    background: #ffffff;
+    border-color: rgba(90, 45, 156, 0.12);
+    box-shadow: 0 4px 16px rgba(90, 45, 156, 0.08);
+}
+
+.desc-card:hover {
+    box-shadow: 0 8px 24px rgba(90, 45, 156, 0.15);
+}
+
+.desc-label {
+    color: #5a2d9c;
+}
+
+.desc-text {
+    color: #555;
+}
+
+.result-badge {
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+}
+
+.empty-state {
+    color: #888;
+}
+
+.empty-state i {
+    color: rgba(90, 45, 156, 0.2);
+}
+
+.empty-state span {
+    color: #5a2d9c;
+}
+
+.skeleton-card {
+    background: #ECEAE4;
+    border-color: rgba(90, 45, 156, 0.1);
+}
+
+.skeleton-poster,
+.skeleton-text {
+    background: linear-gradient(90deg, #ddd8f0 25%, #e8e2f5 50%, #ddd8f0 75%);
+    background-size: 200% 100%;
+}
+
+.suggestions-title {
+    color: #1a1a1a;
+}
+
+.suggestions-title i {
+    color: #5a2d9c;
+}
+
+.suggestion-tag {
+    background: rgba(90, 45, 156, 0.06);
+    border-color: rgba(90, 45, 156, 0.15);
+    color: #3a1a7a;
+}
+
+.suggestion-tag i {
+    color: #5a2d9c;
+}
+
+.suggestion-tag:hover {
+    background: linear-gradient(135deg, #5a2d9c, #9b6de0);
+    color: white;
+    border-color: transparent;
+}
+
+.suggestion-tag:hover i {
+    color: white;
+}
+
+.search-divider {
+    background: linear-gradient(to right, transparent, rgba(90, 45, 156, 0.25), transparent);
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Screenly - Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    
+    <link id="theme-style" rel="stylesheet" href="main.css">
+    
+    <link rel="stylesheet" href="search.css">
+
+   
+    <link id="search-theme-style" rel="stylesheet" href="">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    
+    <header class="header">
+        <a href="index.html">
+            <h1 class="logo">Screenly</h1>
+        </a>
+        <div class="authentication">
+            <a href="login.html" id="login" title="Already have an account" class="auth-link">Login</a>
+            <a href="Signup.html" id="signup" title="Create a new account" class="auth-link">Sign up</a>
+        </div>
+        <div class="toggle" onclick="toggleTheme()">
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <div class="toggle-ball"></div>
+        </div>
+    </header>
+    <hr class="line">
+    
+    <div class="sidebar">
+        <a href="index.html" title="Main page"><i class="left-menue-icon fa-solid fa-house"></i></a>
+        <a href="search.html" title="Search"><i class="left-menue-icon fa-solid fa-magnifying-glass active-icon"></i></a>
+        <a href="Movies.html" title="Movies"><i class="left-menue-icon fa-solid fa-film"></i></a>
+        <a href="Tv-Shows.html" title="TV-Shows"><i class="left-menue-icon fa-solid fa-tv"></i></a>
+        <a href="Recommend.html" title="Recommend"><i class="left-menue-icon fa-brands fa-yelp"></i></a>
+        <a href="Top10.html" title="Top10"><i class="left-menue-icon fa-solid fa-ranking-star"></i></a>
+        <a href="Account.html" title="Account"><i class="left-menue-icon fa-solid fa-user"></i></a>
+        <a href="contact_us.html" title="Contact us"><i class="left-menue-icon fa-solid fa-at"></i></a>
+        <i id="settings-icon" title="Settings" class="left-menue-icon fa-solid fa-gear"></i>
+    </div>
+    
+    <div class="search-wrapper">
+        
+        <div class="search-box">
+            <h2 class="search-title">Find Your Next Watch</h2>
+
+            <div class="search-bar-container">
+                <input
+                    class="search-input"
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search movies, TV shows, actors..."
+                    oninput="handleInput()"
+                    onkeydown="handleKey(event)"
+                    autocomplete="off"
+                />
+                <button class="clear-btn" id="clearBtn" onclick="clearSearch()">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <button class="search-btn" onclick="doSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
+            </div>
+    
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="setFilter('all', this)">All</button>
+                <button class="filter-tab" onclick="setFilter('movie', this)">Movies</button>
+                <button class="filter-tab" onclick="setFilter('tv', this)">TV Shows</button>
+                <button class="filter-tab" onclick="setFilter('top', this)">Top Rated</button>
+                <button class="filter-tab" onclick="setFilter('new', this)">New Releases</button>
+            </div>
+        </div>
+
+        <div class="skeleton-grid" id="skeletonGrid">
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+            <div class="skeleton-card"><div class="skeleton-poster"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div></div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display:none;">
+            <p class="results-header" id="resultsHeader"></p>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <i class="fa-solid fa-face-frown-open"></i>
+            <p>No results found for <span id="emptyQuery"></span></p>
+            <p style="font-size:13px;">Try a different keyword or browse our categories.</p>
+        </div>
+
+        <div class="search-divider"></div>    
+    <div class="suggestions-section" id="suggestionsSection">
+            <p class="suggestions-title"><i class="fa-solid fa-fire"></i> Trending Searches</p>
+            <div class="suggestions-tags">
+                <div class="suggestion-tag" onclick="quickSearch('Avengers')"><i class="fa-solid fa-fire"></i> Avengers</div>
+                <div class="suggestion-tag" onclick="quickSearch('Euphoria')"><i class="fa-solid fa-star"></i> Euphoria</div>
+                <div class="suggestion-tag" onclick="quickSearch('Daredevil')"><i class="fa-solid fa-bolt"></i> Daredevil</div>
+                <div class="suggestion-tag" onclick="quickSearch('Christopher Nolan')"><i class="fa-solid fa-video"></i> Christopher Nolan</div>
+                <div class="suggestion-tag" onclick="quickSearch('Zendaya')"><i class="fa-solid fa-star"></i> Zendaya</div>
+                <div class="suggestion-tag" onclick="quickSearch('Spider-Man')"><i class="fa-solid fa-spider"></i> Spider-Man</div>
+                <div class="suggestion-tag" onclick="quickSearch('The Boys')"><i class="fa-solid fa-mask"></i> The Boys</div>
+                <div class="suggestion-tag" onclick="quickSearch('Action')"><i class="fa-solid fa-gun"></i> Action</div>
+                <div class="suggestion-tag" onclick="quickSearch('Thriller')"><i class="fa-solid fa-skull"></i> Thriller</div>
+                <div class="suggestion-tag" onclick="quickSearch('Sci-Fi')"><i class="fa-solid fa-rocket"></i> Sci-Fi</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Screenly</h2>
+                <p>Your place to discover, explore, and review movies & TV shows. Built by film lovers, for film lovers.</p>
+                <div class="footer-socials">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-compass"></i> Navigate</h4>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+                <a href="Tv-Shows.html"><i class="fa-solid fa-tv"></i> TV Shows</a>
+                <a href="Top10.html"><i class="fa-solid fa-ranking-star"></i> Top 10</a>
+                <a href="Recommend.html"><i class="fa-brands fa-yelp"></i> Recommend</a>
+            </div>
+            <div class="footer-links">
+                <h4><i class="fa-solid fa-user"></i> Account</h4>
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="Signup.html"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                <a href="Account.html"><i class="fa-solid fa-circle-user"></i> My Account</a>
+                <a href="contact_us.html"><i class="fa-solid fa-at"></i> Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-stats">
+            <div class="footer-stat"><i class="fa-solid fa-film"></i><span>500+ Movies</span></div>
+            <div class="footer-stat"><i class="fa-solid fa-tv"></i><span>300+ TV Shows</span></div>
+            <div class="footer-stat"><i class="fa-solid fa-star"></i><span>10K+ Reviews</span></div>
+            <div class="footer-stat"><i class="fa-solid fa-users"></i><span>50K+ Users</span></div>
+        </div>
+        <hr class="footer-line">
+        <div class="footer-bottom">
+            <p>© 2026 Screenly. All rights reserved to FCAI CAPITAL UNI. Built with passion for film lovers.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="search.js"></script>
+
+</body>
+</html>
