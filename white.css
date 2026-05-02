@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     font-size: 20px;
     gap: 10px;
-    padding-top: 110px;
+    padding-top: 100px;
     align-items: center;
     border-right: 1px solid rgba(90, 45, 156, 0.15);
 }
@@ -107,128 +107,137 @@ body {
     position: absolute;
     right: 2px;
     border-radius: 50%;
-    transition: 0.3s;
-}
-
-body.dark .toggle-ball {
+    transition: all 0.5s ease;
     transform: translateX(-25px);
 }
 
-.line {
-    border: none;
-    height: 2px;
-    width: 80%;
-    margin: 30px auto;
-    background: linear-gradient(to right, transparent, #3D2B5C, transparent);
-}
-
-
 .container{
+    background-color:white;
+    min-height: calc((100vh - 50px));
+    
+}
+.content-container {
+    margin-left:50px ;
+}
+.movie-content{
+    height: 50vh;
+    background:linear-gradient(to bottom,rgba(0,0,0,0),white), url('back_forst.jpg ');
+}
+.movie-list-container{
+    padding:0  20px;
+    margin-left: 50px;
+    
+}
+.movie-lisst-title{
+    color: #5a2d9c;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-size: 22px;
+    border-left: 4px solid #5a2d9c;
+    padding-left: 12px;
+}
+
+.wrapper{
+    position: relative;
+    overflow: visible;
+}
+
+.movie-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    height: auto;
+    align-items: stretch;
+    transition: none;
+}
+
+/* Card style */
+.main-list{
+    margin-right: 0;
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 1px solid #ede8f5;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    /* background-color: #5a2d9c; */
-
-}
-.login-box{
-    position: relative;
-    width: 400px;
-    /* background-color: red; */
-
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.login-box form{
+.main-list:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(90,45,156,0.15);
+}
+
+.main-list:hover .movie-list-img{
+    transform: scale(1.04);
+    margin: 0;
+    opacity: 1;
+}
+
+.main-list:hover .title,
+.main-list:hover .movie-list-desc,
+.main-list:hover .watch {
+    opacity: 1;
+}
+
+.movie-list-img{
+    transition: transform 0.3s ease;
+    border-radius: 0;
     width: 100%;
-    padding: 0 50px;
+    height: 160px;
+    object-fit: cover;
 }
-.login-box h2{
-    color: #3D2B5C;
-    text-align: center;
-}
-.input-box{
-    position: relative;
-    margin: 25px 0;
 
+.title{
+    background-color: transparent;
+    color: #1a1a1a;
+    padding: 10px 12px 4px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    position: static;
+    opacity: 1;
+    transition: none;
 }
-.input-box input {
+
+.movie-list-desc{
+    background-color: transparent;
+    padding: 4px 12px 10px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    position: static;
+    opacity: 1;
+    transition: none;
     width: 100%;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #3D2B5C;
-    border-radius: 40px;
+    flex: 1;
+}
+
+.watch{
+    padding: 9px;
+    color: white;
+    border-radius: 0 0 12px 12px;
     outline: none;
-    transition: .5s ease;
-    padding: 0 20px;
-    font-size: 1em;
-    color: #3D2B5C;
-
-}
-
-.input-box label{
-    position: absolute;
-    left: 20px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-size: 1em;
-    color: #3D2B5C;
-    top: 50%;
-    transition: .5s ease;
-}
-.input-box input:focus,
-.input-box input:valid{
-    border-color: #5a2d9c;
-}
-.input-box input:focus~label,
-.input-box input:valid~label{
-    top: 1px;
-    font-size: .8em ;
-    padding: 0 6px;
-    color: #5a2d9c;
-    background: white;
-
-}
-.forget-pass{
-    margin: -15px 0 10px;
-    text-align: center;
-}
-.forget-pass a {
-    font-size: .85em;
-    color: #5a2d9c;
-    text-decoration: none;
-}
-
-.forget-pass a:hover{
-    text-decoration: underline;
-}
-
-.btn{
-    width: 100%;
-    height: 45px;
-    background-color: #5a2d9c;
     border: none;
-    outline: none;
-    border-radius: 50px;
+    background-color: #5a2d9c;
+    position: static;
     cursor: pointer;
-    font-size: 1em;
-    color: #3D2B5C;
+    opacity: 1;
+    transition: background 0.2s;
+    font-size: 13px;
     font-weight: 600;
-}
-.sign-up {
-    margin: 20px 0 10px ;
-    text-align: center;
-
-}   
-.sign-up a{
-    font-size: 1em;
-    color: #5a2d9c;
-    text-decoration: none;
-    font-weight: 600;
-}
-.sign-up a:hover {
-    text-decoration: underline;
+    width: 100%;
 }
 
+.watch:hover{
+    background-color: #4a2484;
+}
+
+.arrow{
+    /* display: none; */
+    color: transparent
+}
 
 .footer {
     margin-top: 60px;
