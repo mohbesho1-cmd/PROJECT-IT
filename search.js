@@ -235,3 +235,19 @@ function resetToSuggestions() {
     document.getElementById("emptyState").style.display         = "none";
     document.getElementById("skeletonGrid").style.display       = "none";
 }
+
+(function() {
+    const saved = localStorage.getItem("theme") || "dark";
+    const searchTheme = document.getElementById("search-theme-style");
+    if (searchTheme) {
+        searchTheme.href = saved === "light" ? "search2.css" : "";
+    }
+})();
+
+function toggleSearchTheme() {
+    const saved = localStorage.getItem("theme") || "dark";
+    const searchTheme = document.getElementById("search-theme-style");
+    if (searchTheme) {
+        searchTheme.href = saved === "light" ? "search2.css" : "";
+    }
+}
