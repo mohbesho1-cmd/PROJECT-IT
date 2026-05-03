@@ -5,19 +5,17 @@
 }
 
 body {
-    background: rgba(90, 45, 156, 0.04);
+    background-color: #F5F4F0;
     font-family: "Roboto", sans-serif;
-    
+    color: #1a1a1a;
 }
 
 .header {
     display: flex;
     align-items: center;
-    /* vertically center */
     justify-content: space-between;
-    /* space between logo & nav */
     padding: 10px 20px;
-    box-shadow: 22px 5px 15px 0px rgba(0, 0, 0, 0);
+    background-color: #F5F4F0;
     position: relative;
 }
 
@@ -27,16 +25,15 @@ body {
 
 .logo {
     font-size: 40px;
-    color: #5a2d9c;
+    color: #3a1a7a;
     margin-left: 70px;
     padding: 5px;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 50px;
     height: 100%;
-    background-color:white;
+    background-color: #ECEAE4;
     position: fixed;
     top: 0;
     display: flex;
@@ -45,26 +42,21 @@ body {
     gap: 10px;
     padding-top: 110px;
     align-items: center;
-    box-shadow: 5px 0px 15px -4px #d8c4f7;
-    
+    border-right: 1px solid rgba(90, 45, 156, 0.15);
 }
 
-/* ICON STYLE */
 .left-menue-icon {
     color: #5a2d9c;
     font-size: 20px;
     margin-bottom: 40px;
-    /* smooth animation */
     transition: 0.3s;
 }
 
-/* HOVER POP EFFECT */
 .left-menue-icon:hover {
-    color: #5a2d9c;
+    color: #3a1a7a;
     transform: scale(1.7) translateY(-5px);
 }
 
-/* SETTINGS ICON SPACING */
 #settings-icon {
     margin-top: 20px;
 }
@@ -78,20 +70,19 @@ body {
 .auth-link {
     font-size: 20px;
     text-decoration: none;
-    color: #5a2d9c;
+    color: #3a1a7a;
     font-weight: 500;
     padding: 5px 10px;
     transition: 0.2s;
 }
 
 .auth-link:hover {
-    /* background-color: #000000; */
+    background-color: #e8e2f5;
     color: #5a2d9c;
     border-radius: 12px;
     transform: translateY(15px);
 }
 
-/* TOGGLE */
 .toggle {
     width: 50px;
     height: 25px;
@@ -117,9 +108,11 @@ body {
     right: 2px;
     border-radius: 50%;
     transition: 0.3s;
-    transform: translateX(-25px);
 }
 
+body.dark .toggle-ball {
+    transform: translateX(-25px);
+}
 .line {
     border: none;
     height: 2px;
