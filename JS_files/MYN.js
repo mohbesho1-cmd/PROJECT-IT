@@ -254,6 +254,7 @@ releaseDateSelect.addEventListener("change", applyFilters);
 
 const genreNameDisplay = document.createElement("span");
 genreNameDisplay.id = "active-genre-name";
+const tex = document.querySelector(".text");
 const prevBtn = document.getElementById("prev-genre");
 const nextBtn = document.getElementById("next-genre");
 const displayContainer = document.querySelector(".current-genre-display");
@@ -266,6 +267,7 @@ function updateGenreUI(direction) {
     let totalOptions = typeSelect.options.length
     if (direction === "next") {
         typeSelect.selectedIndex = (currentIndex + 1) % totalOptions;
+
     }
     else {
         typeSelect.selectedIndex = (currentIndex - 1 + totalOptions) % totalOptions;
@@ -276,8 +278,8 @@ function updateGenreUI(direction) {
     applyFilters();
 }
 if (prevBtn && nextBtn) {
-    prevBtn.addEventListener("click", () => updateGenreUI("prev"));
-    nextBtn.addEventListener("click", () => updateGenreUI("next"));
+    prevBtn.addEventListener("click", function () { updateGenreUI("prev"); tex.style.display = "none"; });
+    nextBtn.addEventListener("click", function () { updateGenreUI("next"); tex.style.display = "none"; });
 }
 function checkGenreVisibility() {
     const sliderWrapper = document.querySelector(".genre-slider-wrapper");
