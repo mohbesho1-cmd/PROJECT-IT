@@ -17,7 +17,7 @@ window.onload = function () {
     let saved = localStorage.getItem("theme") || "dark";
 
     if (saved === "light") {
-        document.getElementById("theme-style").href = "reccom.css";
+        document.getElementById("theme-style").href = "reccom2.css";
         document.body.classList.remove("dark");
     } else {
         document.getElementById("theme-style").href = "reccom.css";
