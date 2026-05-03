@@ -1,22 +1,29 @@
-/* ===== Theme Toggle ===== */
 function toggleTheme() {
-const theme = document.getElementById("theme-style");
-const current = theme.getAttribute("href");
+    let theme = document.getElementById("theme-style");
 
-if (current === "reccom.css") {
-    theme.setAttribute("href", "reccom2.css");
-    localStorage.setItem("theme", "light");
-} else {
-    theme.setAttribute("href", "reccom.css");
-    localStorage.setItem("theme", "dark");
-}
+    if (theme.getAttribute("href") === "main.css") {
+        theme.setAttribute("href", "main2.css");
+        localStorage.setItem("theme", "light");
+        document.body.classList.remove("dark");
+    } else {
+        theme.setAttribute("href", "main.css");
+        localStorage.setItem("theme", "dark");
+        document.body.classList.add("dark");
+    }
 }
 
-window.addEventListener("load", () => {
-const saved = localStorage.getItem("theme") || "dark";
-document.getElementById("theme-style").href =
-    saved === "light" ? "reccom2.css" : "reccom.css";
-});
+// load saved theme
+window.onload = function () {
+    let saved = localStorage.getItem("theme") || "dark";
+
+    if (saved === "light") {
+        document.getElementById("theme-style").href = "main2.css";
+        document.body.classList.remove("dark");
+    } else {
+        document.getElementById("theme-style").href = "main.css";
+        document.body.classList.add("dark");
+    }
+};
 
 /* ===== Movies Data ==== */
 const movies = [
