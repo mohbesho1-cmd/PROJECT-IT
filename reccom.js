@@ -1,4 +1,4 @@
-/* ===== Theme Toggle (fix بسيط) ===== */
+/* ===== Theme Toggle ===== */
 function toggleTheme() {
 const theme = document.getElementById("theme-style");
 const current = theme.getAttribute("href");
