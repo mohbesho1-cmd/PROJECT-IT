@@ -1,30 +1,22 @@
+/* ===== Theme Toggle (fix بسيط) ===== */
 function toggleTheme() {
-    let theme = document.getElementById("theme-style");
+const theme = document.getElementById("theme-style");
+const current = theme.getAttribute("href");
 
-    if (theme.getAttribute("href") === "reccom.css") {
-        theme.setAttribute("href", "recomm2.css");
-        localStorage.setItem("theme", "light");
-        document.body.classList.remove("dark");
-    } else {
-        theme.setAttribute("href", "reccom.css");
-        localStorage.setItem("theme", "dark");
-        document.body.classList.add("dark");
-    }
+if (current === "reccom.css") {
+    theme.setAttribute("href", "reccom2.css");
+    localStorage.setItem("theme", "light");
+} else {
+    theme.setAttribute("href", "reccom.css");
+    localStorage.setItem("theme", "dark");
+}
 }
 
-// load saved theme
-window.onload = function () {
-    let saved = localStorage.getItem("theme") || "dark";
-
-    if (saved === "light") {
-        document.getElementById("theme-style").href = "reccom2.css";
-        document.body.classList.remove("dark");
-    } else {
-        document.getElementById("theme-style").href = "reccom.css";
-        document.body.classList.add("dark");
-    }
-};
-
+window.addEventListener("load", () => {
+const saved = localStorage.getItem("theme") || "dark";
+document.getElementById("theme-style").href =
+    saved === "light" ? "reccom2.css" : "reccom.css";
+});
 /* ===== Movies Data ==== */
 const movies = [
 { title: "Doctor Strange: Multiverse of Madness", year: 2021, rate: 4.6, image: "images.jpg" },
