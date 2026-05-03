@@ -321,10 +321,10 @@ body.dark .toggle-ball {
 .movies-section {
     margin: 80px 0;
     margin-left: 90px;
-    border: 2px solid #1a1a1a;      /* border بنفسجي */
-    border-radius: 20px;             /* زوايا مدورة */
-    padding: 20px;                   /* مسافة داخلية */
-    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2); /* ضل بنفسجي خفيف */
+    border: 2px solid #1a1a1a;      
+    border-radius: 20px;             
+    padding: 20px;                  
+    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2);
 }
 .section-header {
     display: flex;
@@ -358,8 +358,8 @@ body.dark .toggle-ball {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 22px;
     padding: 0 50px;
-    height: 400px;        /* ارتفاع ثابت - يظهر صف واحد وشوية من التاني */
-    overflow-y: scroll;   /* سكرول بالطول داخل الـ container */
+    height: 400px;        
+    overflow-y: scroll;   
     overflow-x: hidden;
 }
 
@@ -430,10 +430,10 @@ body.dark .toggle-ball {
 .series-section {
     margin: 80px 0;
     margin-left: 90px;
-    border: 2px solid #1a1a1a;      /* border بنفسجي */
-    border-radius: 20px;             /* زوايا مدورة */
-    padding: 20px;                   /* مسافة داخلية */
-    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2); /* ضل بنفسجي خفيف */
+    border: 2px solid #1a1a1a;      
+    border-radius: 20px;             
+    padding: 20px;                   
+    box-shadow: 0 0 20px rgba(174, 124, 255, 0.2); 
 }
 
 .series-row {
@@ -441,8 +441,8 @@ body.dark .toggle-ball {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 22px;
     padding: 0 50px;
-    height: 400px;        /* ارتفاع ثابت - يظهر صف واحد وشوية من التاني */
-    overflow-y: scroll;   /* سكرول بالطول داخل الـ container */
+    height: 400px;        
+    overflow-y: scroll;   
     overflow-x: hidden;
 }
 
